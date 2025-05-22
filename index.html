@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>परीक्षा परिणाम</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Campus Gate Slideshow Styles */
+    .campus-slideshow {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    .campus-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out, transform 8s ease-in-out;
+      object-fit: cover;
+      transform: scale(1.05);
+    }
+    
+    .campus-slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .campus-slide.next-up {
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="header">
+      <div class="header-left">
+        <svg class="logo-svg" width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="48" stroke="#0D47A1" stroke-width="2" fill="#ffffff"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia, serif" font-size="36" font-weight="bold" fill="#0D47A1">P</text><defs><path id="bottomArc" d="M 20,65 A 30,30 0 0,0 80,65" /></defs><text font-family="'Noto Sans Devanagari', sans-serif" font-size="10.5" fill="#0D47A1"><textPath href="#bottomArc" startOffset="50%" text-anchor="middle">शिक्षा सार्वव्यापी</textPath></text></svg>
+        <div class="inst-names">
+          <div class="inst-hindi">परीक्षा परिणाम</div>
+          <div class="inst-eng">Pariksha Parinam <span class="tagline">(Superiority in Technology)</span></div>
+        </div>
+      </div>
+      <div class="header-right">
+        <select class="lang-select">
+          <option>English</option>
+          <option>हिन्दी</option>
+        </select>
+      </div>
+    </div>
+    <div class="nav">
+      <div class="nav-item" onclick="showDevMsg()">About</div>
+      <div class="nav-item" onclick="showDevMsg()">Divisions</div>
+      <div class="nav-item" onclick="showDevMsg()">Academics</div>
+      <div class="nav-item" onclick="showDevMsg()">Admissions</div>
+      <div class="nav-item" onclick="showDevMsg()">Research & Industry</div>
+      <div class="nav-item" onclick="showDevMsg()">Career</div>
+      <div class="nav-item view-result" onclick="openResultWindow()">View Result</div>
+      <div class="nav-item" onclick="showDevMsg()">Contact Us</div>
+    </div>
+    <div class="ticker-bar">
+      <div class="ticker">Result Announced &nbsp;|&nbsp; Result Announced &nbsp;|&nbsp; Result Announced</div>
+    </div>
+    <div class="main-content">
+      <div class="top-section">
+        <div class="slider-container" id="mainSlider">
+          <!-- Campus Main Gate Slideshow -->
+          <div class="campus-slideshow">
+            <img class="campus-slide active" src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80" alt="Campus Main Gate" data-caption="Campus Main Gate">
+            <img class="campus-slide" src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80" alt="Campus Entrance" data-caption="Campus Entrance">
+            <img class="campus-slide" src="https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?auto=format&fit=crop&w=1200&q=80" alt="Campus Architecture" data-caption="Campus Architecture">
+            <img class="campus-slide" src="https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=1200&q=80" alt="Student Plaza" data-caption="Student Plaza">
+            <img class="campus-slide" src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80" alt="Campus Lawn" data-caption="Campus Lawn">
+            <img class="campus-slide" src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80" alt="Campus Buildings" data-caption="Campus Buildings">
+          </div>
+          <div class="slider-caption" id="mainCap">Campus Main Gate</div>
+        </div>
+        
+        <div class="notice-board">
+          <div class="notice-header">
+            <h2>Notice Board</h2>
+            <div class="notice-badge">New</div>
+          </div>
+          <div class="notice-content" id="noticeContent">
+            <div class="notice-item">
+              <div class="notice-date">15 May 2025</div>
+              <div class="notice-title">Final Semester Results Announced</div>
+              <div class="notice-text">All students can now check their results through the results portal.</div>
+            </div>
+            <div class="notice-item">
+              <div class="notice-date">12 May 2025</div>
+              <div class="notice-title">Summer Internship Applications Open</div>
+              <div class="notice-text">Apply before May 25th to secure your spot in our summer internship program.</div>
+            </div>
+            <div class="notice-item">
+              <div class="notice-date">10 May 2025</div>
+              <div class="notice-title">Campus Reopening Schedule</div>
+              <div class="notice-text">The campus will reopen for the new academic year on June 15th, 2025.</div>
+            </div>
+            <div class="notice-item">
+              <div class="notice-date">05 May 2025</div>
+              <div class="notice-title">Scholarship Announcement</div>
+              <div class="notice-text">Merit scholarships for the next semester will be announced on May 20th.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="events-section">
+        <div class="events-title">Events <span class="live-updates">Live Updates</span></div>
+        <div class="events-slider">
+          <!-- Event arrows removed -->
+          <div class="events-list" id="eventsList"></div>
+        </div>
+      </div>
+      <!-- Student Award Gallery Section -->
+      <div class="gallery-section">
+        <div class="gallery-title">Student Award Moments</div>
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=400&q=80" alt="Student receiving award">
+            <div class="gallery-caption">Anjali Sharma receiving Best Student Award</div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1571210862729-78a52d3779a2?auto=format&fit=crop&w=400&q=80" alt="Student receiving award">
+            <div class="gallery-caption">Rahul Verma honored for Academic Excellence</div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=400&q=80" alt="Student receiving award">
+            <div class="gallery-caption">Priya Singh awarded for Sports Achievement</div>
+          </div>
+        </div>
+      </div>
+      <!-- End Gallery Section -->
+    </div>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Pariksha Parinam. All Rights Reserved.</p>
+        <p>Designed with <span class="heart">❤</span> for Education by <span class="designer-name">Somil Nema</span></p>
+      </div>
+    </footer>
+  </div>
+  <div class="dev-msg-card" id="devMsgCard">website under development only results are available</div>
+  
+  <!-- Mobile bottom navigation removed -->
+  
+  <script src="script.js"></script>
+  <script>
+    // Campus Gate Slideshow
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.campus-slide');
+      const caption = document.getElementById('mainCap');
+      let currentSlide = 0;
+      
+      function nextSlide() {
+        // Remove active class from current slide
+        slides[currentSlide].classList.remove('active');
+        
+        // Calculate next slide index
+        let nextSlideIndex = (currentSlide + 1) % slides.length;
+        
+        // Add next-up class to the upcoming slide for proper z-index
+        slides[nextSlideIndex].classList.add('next-up');
+        
+        // Add active class to next slide
+        slides[nextSlideIndex].classList.add('active');
+        
+        // Update caption
+        caption.textContent = slides[nextSlideIndex].getAttribute('data-caption');
+        
+        // Remove next-up class from current slide after transition
+        setTimeout(() => {
+          slides[currentSlide].classList.remove('next-up');
+          currentSlide = nextSlideIndex;
+        }, 1200);
+      }
+      
+      // Change slide every 3 seconds
+      setInterval(nextSlide, 3000);
+    });
+  </script>
+</body>
+</html>
